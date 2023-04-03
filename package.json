@@ -1,0 +1,19 @@
+{
+  "name": "tcp_repeater",
+  "version": "1.0.0",
+  "description": "Simple server that returns all input to sender",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lewis98/TCP_Repeater.git"
+  },
+  "author": "Lewis Stokes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lewis98/TCP_Repeater/issues"
+  },
+  "homepage": "https://github.com/Lewis98/TCP_Repeater#readme"
+}
