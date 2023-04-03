@@ -18,4 +18,5 @@ TCP Socket that returns input
 
 1. Connect to the server using TCP utility (Tested using Windows 'telnet' and 'ncat' command line utilities)
 <br/>(Ensure correct client type is set above)
+    * Example command : `telnet 127.0.0.1 3000`
 2. Send data to the server using the terminal, use Enter to return the result
