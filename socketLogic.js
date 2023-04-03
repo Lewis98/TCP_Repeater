@@ -1,6 +1,6 @@
-var output = '';
+var output = ''; // Used in telnet function to hold data before sending 
 
-
+// Logic used for Windows Telnet command
 module.exports.telnet = (socket, data) => {
     if (data == '\r\n') {
         console.log(`Recieved : ${output}`);
@@ -11,7 +11,7 @@ module.exports.telnet = (socket, data) => {
     };
 };
 
-
+// Logic used for Unix netcat command
 module.exports.netcat = (socket, data) => {
     console.log(`Recieved : ${data}`);
     socket.write(data + '> ');
