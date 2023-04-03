@@ -1,12 +1,9 @@
 const port = process.env.port || 3000;
 const svr = require('net').createServer();
 
-const cliType = process.env.client || 'netcat';
-
+const cliType = process.env.client || 'telnet';
 
 const sl = require('./socketLogic');
-let socketLogic;
-
 
 
 svr.on('connection', (socket) => {
@@ -15,10 +12,13 @@ svr.on('connection', (socket) => {
 
     switch (cliType) {
         case 'telnet':
+        case 'tn':
             socket.on('data', (d) => {sl.telnet(socket, d)});            
             break;
             
         case 'netcat':
+        case 'nc':
+        case 'ncat':
             socket.on('data', (d) => {sl.netcat(socket, d)});            
             break;
     
