@@ -1,16 +1,17 @@
 const svr = require('net').createServer();
 
+const port = process.env.port || 3000;
 
 svr.on('connection', (socket) => {
-    console.log('Connected!');
-    socket.write('Connected to server\r\n');
+    console.log(`Connection from ${socket.remoteAddress} established!`);
+    socket.write('Connected to server\r\n> ');
 
     let output = '';
     socket.on('data', data => {
         
         if (data == '\r\n') {
             console.log(`Recieved : ${output}`);
-            socket.write(output + '\r\n');
+            socket.write(output + '\r\n> ');
             output = '';
         }else{
             output += data;
@@ -20,4 +21,4 @@ svr.on('connection', (socket) => {
 })
 
 
-svr.listen(3000);
+svr.listen(port);
